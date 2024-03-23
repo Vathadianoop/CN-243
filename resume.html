@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Form</title>
+<style>
+    table{
+	margin-top: 50px;
+	text-align: center;
+	background: #333;
+	color: #fff;
+}
+
+#show th, #show td{
+	padding: 13px;
+}
+
+#btna td input{
+	width: 100%;
+}
+    body {
+        background-image:url(login\ background.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;
+            background-size: 100% 100%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+    }
+    .container {
+        background: transparent;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    label{
+        display: block;
+            margin-bottom: 5px;
+            color: aqua;
+            font-family: optionfont;
+    }
+    input, textarea {
+        width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+    }
+    input[type="submit"] {
+        color: #fff;
+            cursor: pointer;
+            background:transparent;
+    border-radius: 50px;
+    font-size: 35px;
+    color: aliceblue;
+    transition: .5s;
+    font-family: optionfont;
+    border: 2px solid rgb(64, 230, 233);
+    }
+    .zero-size {
+        font-size: 0;
+        size: 0;
+        color: transparent;
+    }
+    @font-face{
+font-family:headfont;
+src: url(Agbalumo-Regular.ttf);
+}
+@font-face{
+font-family: optionfont;
+src: url(VarelaRound-Regular.ttf);
+}
+</style>
+</head>
+<body id="text">
+    <div class="container" id="text">
+        <h1>Resume Form</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+            
+            <label for="education">Education:</label>
+            <textarea id="education" name="education" rows="4" required></textarea>
+
+            <label for="githubpage">Link for your github profile:</label>
+            <input type="git" id="githubpage" name="githubpage" required>
+
+            <label for="experience">Experience:</label>
+            <textarea id="experience" name="experience" rows="4" required></textarea>
+
+            <label for="myfile">CV:</label>
+            <input type="file" id="myfile" name="filename">
+
+            <td colspan="2"><input type="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
+
+        </form>
+    </div>
+    <center><table border="4" id="show">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Education</th>
+                <th>github profile</th>
+                <th>Experience</th>
+            </tr>
+        </thead>
+    </table>
+</center>
+    <script>
+		
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		var list4 = [];
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+			list1[x] = document.getElementById("name").value;
+			list2[x] = document.getElementById("email").value;
+			list3[x] = document.getElementById("phone").value;
+			list4[x] = document.getElementById("address").value;
+            list4[x] = document.getElementById("education").value;
+            list4[x] = document.getElementById("githubpage").value;
+            list4[x] = document.getElementById("experience").value;
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+			var cel4 = NewRow.insertCell(3);
+            var cel4 = NewRow.insertCell(4);
+            var cel4 = NewRow.insertCell(5);
+            var cel4 = NewRow.insertCell(6);
+
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+			cel4.innerHTML = list4[x];
+            cel5.innerHTML = list5[x];
+            cel6.innerHTML = list6[x];
+            cel7.innerHTML = list7[x];
+
+			n++;
+			x++;
+		}
+        function result(){
+            var z=0;
+            while(z<x){
+                cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+			cel4.innerHTML = list4[x];
+            cel5.innerHTML = list5[x];
+            cel6.innerHTML = list6[x];
+            cel7.innerHTML = list7[x];
+
+			n++;
+			x++;
+            }
+        }
+        function toggleTextSize() {
+  var text = document.getElementById('text');
+  text.classList.toggle('zero-size');
+  var text = document.getElementById('name');
+  text.classList.toggle('zero-size');
+  var text = document.getElementById('email');
+  text.classList.toggle('zero-size');
+  var text = document.getElementById('phone');
+  text.classList.toggle('zero-size');
+  var text = document.getElementById('address');
+  text.classList.toggle('zero-size');
+  var text = document.getElementById('education');
+  text.classList.toggle('zero-size');
+  var text = document.getElementById('githubpage');
+  text.classList.toggle('zero-size');
+  var text = document.getElementById('experience');
+  text.classList.toggle('zero-size');
+}
+	</script>
+</body>
+</html>
